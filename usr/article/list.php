@@ -8,17 +8,17 @@ ORDER BY A.id DESC
 ";
 $rs = mysqli_query($dbConn, $sql);
 
-$article4 = mysqli_fetch_assoc($rs);
-$article3 = mysqli_fetch_assoc($rs);
-$article2 = mysqli_fetch_assoc($rs);
-$article1 = mysqli_fetch_assoc($rs);
-$article0 = mysqli_fetch_assoc($rs);
-
 $articles = [];
-$articles[] = $article4;
-$articles[] = $article3;
-$articles[] = $article2;
-$articles[] = $article1;
+
+while ( true ) {
+  $article = mysqli_fetch_assoc($rs);
+
+  if ( $article == null ) {
+    break;
+  }
+
+  $articles[] = $article;
+}
 
 ?>
 <!DOCTYPE html>
