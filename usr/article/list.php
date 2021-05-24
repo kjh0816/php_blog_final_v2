@@ -28,10 +28,13 @@ while ( $article = mysqli_fetch_assoc($rs) ) {
 
   <div>
     <?php foreach ( $articles as $article ) { ?>
-      번호 : <?=$article['id']?><br>
+      <?php
+      $detailUri = "detail.php?id=${article['id']}";
+      ?>
+      <a href="<?=$detailUri?>">번호 : <?=$article['id']?></a><br>
       작성 : <?=$article['regDate']?><br>
       수정 : <?=$article['updateDate']?><br>
-      제목 : <?=$article['title']?><br>
+      <a href="<?=$detailUri?>">제목 : <?=$article['title']?></a><br>
       <hr>
     <?php } ?>
   </div>
