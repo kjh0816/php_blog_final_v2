@@ -24,6 +24,11 @@ while ( $article = mysqli_fetch_assoc($rs) ) {
 </head>
 <body>
   <h1>게시물 리스트</h1>
+
+  <hr>
+  <div>
+    <a href="write.php">글 작성</a>
+  </div>
   <hr>
 
   <div>

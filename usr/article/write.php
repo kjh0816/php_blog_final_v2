@@ -1,19 +1,3 @@
-<?php
-$dbConn = mysqli_connect("127.0.0.1", "sbsst", "sbs123414", "php_blog_2021") or die("DB CONNECTION ERROR");
-
-$sql = "
-SELECT *
-FROM article AS A
-ORDER BY A.id DESC
-";
-$rs = mysqli_query($dbConn, $sql);
-
-$articles = [];
-
-while ( $article = mysqli_fetch_assoc($rs) ) {
-  $articles[] = $article;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +9,10 @@ while ( $article = mysqli_fetch_assoc($rs) ) {
 <body>
   <h1>게시물 작성</h1>
   <hr>
-  <!--
-    http://localhost:8020/usr/article/doWrite.php?title=제목1&body=내용2
-  -->
+  <div>
+    <a href="list.php">글 리스트</a>
+  </div>
+  <hr>
 
   <form action="doWrite.php">
     <div>
