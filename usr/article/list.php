@@ -1,5 +1,5 @@
 <?php
-$dbConn = mysqli_connect("127.0.0.1", "sbsst", "sbs123414", "php_blog_2021") or die("DB CONNECTION ERROR");
+require_once $_SERVER['DOCUMENT_ROOT'] . '/webInit.php';
 
 $sql = "
 SELECT *
