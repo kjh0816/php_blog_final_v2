@@ -52,4 +52,20 @@ class APP__UsrArticleController {
 
     require_once static::getViewPath("usr/article/detail");
   }
+
+  public function actionShowModify() {
+    $id = getIntValueOr($_GET['id'], 0);
+
+    if ( $id == 0 ) {
+      jsHistoryBackExit("번호를 입력해주세요.");
+    }
+
+    $article = $this->articleService->getForPrintArticleById($id);
+
+    if ( $article == null ) {
+      jsHistoryBackExit("${id}번 게시물은 존재하지 않습니다.");
+    }
+
+    require_once static::getViewPath("usr/article/modify");
+  }
 }

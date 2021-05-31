@@ -10,7 +10,7 @@ class APP__ArticleService {
     return $this->articleRepository->getForPrintArticles();
   }
 
-  public function getForPrintArticleById(int $id): array {
+  public function getForPrintArticleById(int $id): array|null {
     return $this->articleRepository->getForPrintArticleById($id);
   }
 

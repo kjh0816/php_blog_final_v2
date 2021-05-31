@@ -8,7 +8,7 @@ class APP__ArticleRepository {
     return DB__getRows($sql);
   }
 
-  public function getForPrintArticleById(int $id): array {
+  public function getForPrintArticleById(int $id): array|null {
     $sql = DB__secSql();
     $sql->add("SELECT *");
     $sql->add("FROM article AS A");
