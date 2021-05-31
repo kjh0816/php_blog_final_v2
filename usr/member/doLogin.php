@@ -18,22 +18,14 @@ $sql = "
 SELECT *
 FROM `member` AS M
 WHERE M.loginId = '${loginId}'
+AND M.loginPw = '${loginPw}'
 ";
 $member = DB__getRow($sql);
 
 if ( empty($member) ) {
-  echo "존재하지 않는 회원입니다.";
-  exit;
-}
-
-if ( $member['loginPw'] != $loginPw ) {
-  echo "비밀번호가 일치하지 않습니다.";
-  exit;
+  jsHistoryBackExit("일치하는 회원이 존재하지 않습니다.");
 }
 
 $_SESSION['loginedMemberId'] = $member['id'];
-?>
-<script>
-alert('<?=$member['nickname']?>님 환영합니다.');
-location.replace('../article/list.php');
-</script>
+
+jsLocationReplaceExit("../article/list.php", "{$member['nickname']}님 환영합니다.");
