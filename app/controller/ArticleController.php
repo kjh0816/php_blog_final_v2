@@ -2,16 +2,12 @@
 class APP__UsrArticleController {
   private APP__ArticleService $articleService;
 
-  public static function getViewPath($viewName) {
-    return $_SERVER['DOCUMENT_ROOT'] . '/' . $viewName . '.view.php';
-  }
-
   public function __construct() {
     $this->articleService = new APP__ArticleService();
   }
 
   public function actionShowWrite() {
-    require_once static::getViewPath("usr/article/write");
+    require_once App__getViewPath("usr/article/write");
   }
 
   public function actionDoWrite() {
@@ -34,7 +30,7 @@ class APP__UsrArticleController {
   public function actionShowList() {
     $articles = $this->articleService->getForPrintArticles();
 
-    require_once static::getViewPath("usr/article/list");
+    require_once App__getViewPath("usr/article/list");
   }
 
   public function actionShowDetail() {
@@ -50,7 +46,7 @@ class APP__UsrArticleController {
       jsHistoryBackExit("${id}번 게시물은 존재하지 않습니다.");
     }
 
-    require_once static::getViewPath("usr/article/detail");
+    require_once App__getViewPath("usr/article/detail");
   }
 
   public function actionShowModify() {
@@ -66,6 +62,6 @@ class APP__UsrArticleController {
       jsHistoryBackExit("${id}번 게시물은 존재하지 않습니다.");
     }
 
-    require_once static::getViewPath("usr/article/modify");
+    require_once App__getViewPath("usr/article/modify");
   }
 }
