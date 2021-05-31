@@ -11,6 +11,10 @@ if ( isset($_GET['loginPw']) == false ) {
   exit;
 }
 
+// 기존 코드는 아래와 같이 입력이 되면, 해킹이 된다.
+// loginId=user1
+// loginPw=' OR '' = '
+
 $loginId = $_GET['loginId'];
 $loginPw = $_GET['loginPw'];
 
