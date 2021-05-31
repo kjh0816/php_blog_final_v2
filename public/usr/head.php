@@ -1,14 +1,7 @@
 <?php
-$isLogined = false;
-$loginedMemberId = 0;
-$loginedMember = null;
-
-if ( isset($_SESSION['loginedMemberId']) ) {
-  $isLogined = true;
-  $loginedMemberId = intval($_SESSION['loginedMemberId']);
-  $memberService = new APP__MemberService();
-  $loginedMember = $memberService->getForPrintMemberById($loginedMemberId);
-}
+$isLogined = $GLOBALS['isLogined'];
+$loginedMemberId = $GLOBALS['loginedMemberId'];
+$loginedMember = $GLOBALS['loginedMember'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
