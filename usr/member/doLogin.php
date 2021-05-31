@@ -15,8 +15,10 @@ if ( isset($_GET['loginPw']) == false ) {
 // loginId=user1
 // loginPw=' OR '' = '
 
-$loginId = $_GET['loginId'];
-$loginPw = $_GET['loginPw'];
+//$loginId = $_GET['loginId'];
+//$loginPw = $_GET['loginPw'];
+$loginId = mysqli_real_escape_string($dbConn, $_GET['loginId']);
+$loginPw = mysqli_real_escape_string($dbConn, $_GET['loginPw']);
 
 $sql = "
 SELECT *
