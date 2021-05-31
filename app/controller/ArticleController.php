@@ -3,7 +3,8 @@ class APP__UsrArticleController {
   private APP__ArticleService $articleService;
 
   public function __construct() {
-    $this->articleService = new APP__ArticleService();
+    global $App__articleService;
+    $this->articleService = $App__articleService;
   }
 
   public function actionShowWrite() {

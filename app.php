@@ -8,25 +8,23 @@ require_once __DIR__ . '/app/service/ArticleService.php';
 require_once __DIR__ . '/app/controller/MemberController.php';
 require_once __DIR__ . '/app/controller/ArticleController.php';
 
-// 뷰에서 사용할 이용자의 로그인 상태관련 전역변수
-$isLogined = false;
-$loginedMemberId = 0;
-$loginedMember = null;
+require_once __DIR__ . '/app/global.php';
 
 function App__getViewPath($viewName) {
   return __DIR__ . '/public/' . $viewName . '.view.php';
 }
 
 function App__runBeforActionInterCeptor() {
-  global $isLogined;
-  global $loginedMemberId;
-  global $loginedMember;
+  global $App__memberService;
+
+  global $App__isLogined;
+  global $App__loginedMemberId;
+  global $App__loginedMember;
   
   if ( isset($_SESSION['loginedMemberId']) ) {
-    $isLogined = true;
-    $loginedMemberId = intval($_SESSION['loginedMemberId']);
-    $memberService = new APP__MemberService();
-    $loginedMember = $memberService->getForPrintMemberById($loginedMemberId);
+    $App__isLogined = true;
+    $App__loginedMemberId = intval($_SESSION['loginedMemberId']);
+    $App__loginedMember = $App__memberService->getForPrintMemberById($App__loginedMemberId);
   }
 }
 

@@ -3,7 +3,8 @@ class APP__MemberService {
   private APP__MemberRepository $memberRepository;
 
   public function __construct() {
-    $this->memberRepository = new APP__MemberRepository();
+    global $App__memberRepository;
+    $this->memberRepository = $App__memberRepository;
   }
 
   public function getForPrintMemberByLoginIdAndLoginPw(string $loginId, string $loginPw): array|null {

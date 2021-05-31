@@ -3,7 +3,8 @@ class APP__UsrMemberController {
   private APP__MemberService $memberService;
 
   public function __construct() {
-    $this->memberService = new APP__MemberService();
+    global $App__memberService;
+    $this->memberService = $App__memberService;
   }
 
   public function actionShowLogin() {

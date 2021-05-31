@@ -1,7 +1,7 @@
 <?php
-$isLogined = $GLOBALS['isLogined'];
-$loginedMemberId = $GLOBALS['loginedMemberId'];
-$loginedMember = $GLOBALS['loginedMember'];
+$isLogined = $GLOBALS['App__isLogined'];
+$loginedMemberId = $GLOBALS['App__loginedMemberId'];
+$loginedMember = $GLOBALS['App__loginedMember'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
