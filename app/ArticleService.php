@@ -13,4 +13,8 @@ class APP__ArticleService {
   public function getForPrintArticleById(int $id): array {
     return $this->articleRepository->getForPrintArticleById($id);
   }
+
+  public function writeArticle(string $title, string $body): int {
+    return $this->articleRepository->writeArticle($title, $body);
+  }
 }

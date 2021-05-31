@@ -14,6 +14,23 @@ class APP__UsrArticleController {
     require_once static::getViewPath("usr/article/write");
   }
 
+  public function actionDoWrite() {
+    $title = getStrValueOr($_GET['title'], "");
+    $body = getStrValueOr($_GET['body'], "");
+
+    if ( !$title ) {
+      jsHistoryBackExit("제목을 입력해주세요.");
+    }
+
+    if ( !$body ) {
+      jsHistoryBackExit("내용을 입력해주세요.");
+    }
+
+    $id = $this->articleService->writeArticle($title, $body);
+
+    jsLocationReplaceExit("detail.php?id=${id}", "${id}번 게시물이 생성되었습니다.");
+  }
+
   public function actionShowList() {
     $articles = $this->articleService->getForPrintArticles();
 
