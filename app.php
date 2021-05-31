@@ -5,9 +5,15 @@ class APP__ArticleRepository {
     $sql->add("SELECT *");
     $sql->add("FROM article AS A");
     $sql->add("ORDER BY A.id DESC");
-    $articles = DB__getRows($sql);
+    return DB__getRows($sql);
+  }
 
-    return $articles;
+  public function getForPrintArticleById(int $id): array {
+    $sql = DB__secSql();
+    $sql->add("SELECT *");
+    $sql->add("FROM article AS A");
+    $sql->add("WHERE id = ?", $id);
+    return DB__getRow($sql);
   }
 }
 
@@ -20,6 +26,10 @@ class APP__ArticleService {
 
   public function getForPrintArticles(): array {
     return $this->articleRepository->getForPrintArticles();
+  }
+
+  public function getForPrintArticleById(int $id): array {
+    return $this->articleRepository->getForPrintArticleById($id);
   }
 }
 
@@ -34,12 +44,26 @@ class APP__UsrArticleController {
     $this->articleService = new APP__ArticleService();
   }
 
-  public function actionShowList(): array {
+  public function actionShowList() {
     $articles = $this->articleService->getForPrintArticles();
 
     require_once static::getViewPath("usr/article/list");
+  }
 
-    return $articles;
+  public function actionShowDetail() {
+    $id = getIntValueOr($_GET['id'], 0);
+
+    if ( $id == 0 ) {
+      jsHistoryBackExit("번호를 입력해주세요.");
+    }
+    
+    $article = $this->articleService->getForPrintArticleById($id);
+
+    if ( $article == null ) {
+      jsHistoryBackExit("${id}번 게시물은 존재하지 않습니다.");
+    }
+
+    require_once static::getViewPath("usr/article/detail");
   }
 }
 
