@@ -10,6 +10,11 @@ class APP__UsrMemberController {
     require_once App__getViewPath("usr/member/login");
   }
 
+  public function actionDoLogout() {
+    unset($_SESSION['loginedMemberId']);
+    jsLocationReplaceExit("../article/list.php");
+  }
+
   public function actionDoLogin() {
     if ( isset($_GET['loginId']) == false ) {
       echo "loginId를 입력해주세요.";
