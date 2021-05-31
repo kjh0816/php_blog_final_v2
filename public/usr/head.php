@@ -4,13 +4,10 @@ $loginedMemberId = 0;
 $loginedMember = null;
 
 if ( isset($_SESSION['loginedMemberId']) ) {
-  $loginedMemberId = intval($_SESSION['loginedMemberId']);
   $isLogined = true;
-  $sql = DB__secSql();
-  $sql->add("SELECT M.*");
-  $sql->add("FROM `member` AS M");
-  $sql->add("WHERE M.id = ?", $loginedMemberId);
-  $loginedMember = DB__getRow($sql);
+  $loginedMemberId = intval($_SESSION['loginedMemberId']);
+  $memberService = new APP__MemberService();
+  $loginedMember = $memberService->getForPrintMemberById($loginedMemberId);
 }
 ?>
 <!DOCTYPE html>

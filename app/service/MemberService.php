@@ -9,4 +9,8 @@ class APP__MemberService {
   public function getForPrintMemberByLoginIdAndLoginPw(string $loginId, string $loginPw): array|null {
     return $this->memberRepository->getForPrintMemberByLoginIdAndLoginPw($loginId, $loginPw);
   }
+
+  public function getForPrintMemberById(int $id): array|null {
+    return $this->memberRepository->getForPrintMemberById($id);
+  }
 }

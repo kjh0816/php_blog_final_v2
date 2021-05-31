@@ -9,4 +9,12 @@ class APP__MemberRepository {
     
     return DB__getRow($sql);
   }
+
+  public function getForPrintMemberById(int $id): array|null {
+    $sql = DB__secSql();
+    $sql->add("SELECT M.*");
+    $sql->add("FROM `member` AS M");
+    $sql->add("WHERE M.id = ?", $id);
+    return DB__getRow($sql);
+  }
 }
