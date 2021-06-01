@@ -18,4 +18,12 @@ class APP__ArticleService {
   public function writeArticle(string $title, string $body): int {
     return $this->articleRepository->writeArticle($title, $body);
   }
+
+  public function modifyArticle(int $id, string $title, string $body) {
+    $this->articleRepository->modifyArticle($id, $title, $body);
+  }
+
+  public function deleteArticle(int $id) {
+    $this->articleRepository->deleteArticle($id);
+  }
 }

@@ -15,4 +15,5 @@ $pageTitle = "게시물 상세내용, ${id}번 게시물";
 <div>수정날짜 : <?=$article['updateDate']?></div>
 <div>제목 : <?=$article['title']?></div>
 <div>내용 : <?=$article['body']?></div>
+
 <?php require_once __DIR__ . "/../foot.php"; ?>

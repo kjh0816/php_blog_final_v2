@@ -27,4 +27,21 @@ class APP__ArticleRepository {
 
     return $id;
   }
+
+  public function modifyArticle(int $id, string $title, string $body) {
+    $sql = DB__secSql();
+    $sql->add("UPDATE article");
+    $sql->add("SET updateDate = NOW()");
+    $sql->add(", title = ?", $title);
+    $sql->add(", `body` = ?", $body);
+    $sql->add("WHERE id = ?", $id);
+    $id = DB__update($sql);
+  }
+
+  public function deleteArticle(int $id) {
+    $sql = DB__secSql();
+    $sql->add("DELETE FROM article");
+    $sql->add("WHERE id = ?", $id);
+    $id = DB__delete($sql);
+  }
 }
