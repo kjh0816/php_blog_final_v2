@@ -3,7 +3,7 @@ $pageTitle = "게시물 작성";
 ?>
 <?php require_once __DIR__ . "/../head.php"; ?>
 
-<form action="doWrite.php">
+<form action="doWrite.php" method="POST">
   <div>
     <span>제목</span>
     <input required placeholder="제목을 입력해주세요." type="text" name="title"> 
