@@ -8,10 +8,6 @@ class APP__UsrMemberController {
   }
 
   public function actionShowLogin() {
-    if ( $_REQUEST['App__isLogined'] ) {
-      jsHistoryBackExit("이미 로그인 되었습니다.");
-    }
-
     require_once App__getViewPath("usr/member/login");
   }
 
@@ -21,10 +17,6 @@ class APP__UsrMemberController {
   }
 
   public function actionDoLogin() {
-    if ( $_REQUEST['App__isLogined'] ) {
-      jsHistoryBackExit("이미 로그인 되었습니다.");
-    }
-
     if ( isset($_REQUEST['loginId']) == false ) {
       echo "loginId를 입력해주세요.";
       exit;
