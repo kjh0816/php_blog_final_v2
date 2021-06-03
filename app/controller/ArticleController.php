@@ -8,10 +8,18 @@ class APP__UsrArticleController {
   }
 
   public function actionShowWrite() {
+    if ( $_REQUEST['App__isLogined'] === false ) {
+      jsHistoryBackExit("로그인 후 이용해주세요.");
+    }
+
     require_once App__getViewPath("usr/article/write");
   }
 
   public function actionDoModify() {
+    if ( $_REQUEST['App__isLogined'] === false ) {
+      jsHistoryBackExit("로그인 후 이용해주세요.");
+    }
+
     $id = getIntValueOr($_REQUEST['id'], 0);
     $title = getStrValueOr($_REQUEST['title'], "");
     $body = getStrValueOr($_REQUEST['body'], "");
@@ -40,6 +48,10 @@ class APP__UsrArticleController {
   }
 
   public function actionDoDelete() {
+    if ( $_REQUEST['App__isLogined'] === false ) {
+      jsHistoryBackExit("로그인 후 이용해주세요.");
+    }
+
     $id = getIntValueOr($_REQUEST['id'], 0);
     
     if ( !$id ) {
@@ -58,6 +70,10 @@ class APP__UsrArticleController {
   }
 
   public function actionDoWrite() {
+    if ( $_REQUEST['App__isLogined'] === false ) {
+      jsHistoryBackExit("로그인 후 이용해주세요.");
+    }
+
     $title = getStrValueOr($_REQUEST['title'], "");
     $body = getStrValueOr($_REQUEST['body'], "");
 
@@ -97,6 +113,10 @@ class APP__UsrArticleController {
   }
 
   public function actionShowModify() {
+    if ( $_REQUEST['App__isLogined'] === false ) {
+      jsHistoryBackExit("로그인 후 이용해주세요.");
+    }
+
     $id = getIntValueOr($_REQUEST['id'], 0);
 
     if ( $id == 0 ) {
