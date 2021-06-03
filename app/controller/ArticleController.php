@@ -109,6 +109,12 @@ class APP__UsrArticleController {
       jsHistoryBackExit("${id}번 게시물은 존재하지 않습니다.");
     }
 
+    $actorCanModifyRs = $this->articleService->getActorCanModify($_GET['App__loginedMember'], $article);
+
+    if ( $actorCanModifyRs->isFail() ) {
+      jsHistoryBackExit($actorCanModifyRs->getMsg());
+    }
+
     require_once App__getViewPath("usr/article/modify");
   }
 }

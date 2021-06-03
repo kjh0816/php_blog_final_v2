@@ -10,6 +10,25 @@ require_once __DIR__ . '/app/controller/ArticleController.php';
 
 require_once __DIR__ . '/app/global.php';
 
+class ResultData {
+  public function __construct(
+    private string $resultCode, 
+    private string $msg
+  ) { }
+
+  public function isSuccess():bool {
+    return str_starts_with($this->resultCode, "S-");
+  }
+
+  public function isFail():bool {
+    return !$this->isSuccess();
+  }
+
+  public function getMsg():string {
+    return $this->msg;
+  }
+}
+
 function App__getViewPath($viewName) {
   return __DIR__ . '/public/' . $viewName . '.view.php';
 }
@@ -37,7 +56,6 @@ function App__runNeedLoginInterceptor(string $action) {
     case 'usr/article/list':
     case 'usr/article/detail':
       return;
-      break;
   }
 
   if ( $_REQUEST['App__isLogined'] == false ) {
@@ -54,7 +72,6 @@ function App__runNeedLogoutInterceptor(string $action) {
       break;
     default:
       return;
-      break;
   }
 
   if ( $_REQUEST['App__isLogined'] ) {

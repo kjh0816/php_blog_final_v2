@@ -26,4 +26,12 @@ class APP__ArticleService {
   public function deleteArticle(int $id) {
     $this->articleRepository->deleteArticle($id);
   }
+
+  public function getActorCanModify($actor, $article): ResultData {
+    if ( $actor['id'] === $article['memberId'] ) {
+      return new ResultData("S-1", "소유자 입니다.");
+    }
+
+    return new ResultData("F-1", "작성자만 게시글을 수정할 수 있습니다.");
+  }
 }
