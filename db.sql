@@ -70,3 +70,11 @@ loginPw = 'user2',
 nickname = '이또한',
 email = 'user2@test.com',
 cellphoneNo = '01022222222';
+
+# 게시물 테이블에 작성자 정보 저장
+ALTER TABLE article ADD COLUMN memberId INT(10) UNSIGNED NOT NULL AFTER updateDate;
+
+# 기존 게시물을 특정 회원들과 연결, 랜덤으로
+UPDATE article
+SET memberId = id % 2 + 1
+WHERE memberId = 0;
