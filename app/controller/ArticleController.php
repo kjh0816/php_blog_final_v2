@@ -81,7 +81,7 @@ class APP__UsrArticleController {
       jsHistoryBackExit("내용을 입력해주세요.");
     }
 
-    $id = $this->articleService->writeArticle($title, $body);
+    $id = $this->articleService->writeArticle($_REQUEST['App__loginedMemberId'], $title, $body);
 
     jsLocationReplaceExit("detail.php?id=${id}", "${id}번 게시물이 생성되었습니다.");
   }
