@@ -88,6 +88,7 @@ class APP__UsrArticleController {
 
   public function actionShowList() {
     $articles = $this->articleService->getForPrintArticles();
+    $totalCount = $this->articleService->getTotalArticlesCount();
 
     require_once App__getViewPath("usr/article/list");
   }

@@ -8,6 +8,8 @@ $pageTitle = "게시물 리스트";
 </div>
 <hr>
 
+<div>전체 게시물 수, <?=$totalCount?></div>
+
 <div>
   <?php foreach ( $articles as $article ) { ?>
     <?php

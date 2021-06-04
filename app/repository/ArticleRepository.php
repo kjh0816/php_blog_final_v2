@@ -1,5 +1,12 @@
 <?php
 class APP__ArticleRepository {
+  public function getTotalArticlesCount(): int {
+    $sql = DB__secSql();
+    $sql->add("SELECT COUNT(*) AS cnt");
+    $sql->add("FROM article AS A");
+    return DB__getRowIntValue($sql, 0);
+  }
+
   public function getForPrintArticles(): array {
     $sql = DB__secSql();
     $sql->add("SELECT *");

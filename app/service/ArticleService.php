@@ -7,6 +7,10 @@ class APP__ArticleService {
     $this->articleRepository = $App__articleRepository;
   }
 
+  public function getTotalArticlesCount(): int {
+    return $this->articleRepository->getTotalArticlesCount();
+  }
+
   public function getForPrintArticles(): array {
     return $this->articleRepository->getForPrintArticles();
   }
