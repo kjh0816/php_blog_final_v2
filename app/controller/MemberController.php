@@ -17,14 +17,16 @@ class APP__UsrMemberController {
   }
 
   public function actionDoLogin() {
-    if ( isset($_REQUEST['loginId']) == false ) {
-      echo "loginId를 입력해주세요.";
-      exit;
+    $loginId = getStrValueOr($_REQUEST['loginId'], "");
+
+    if ( empty($loginId) ) {
+      jsHistoryBackExit("loginId를 입력해주세요.");
     }
+
+    $loginPw = getStrValueOr($_REQUEST['loginPw'], "");
     
-    if ( isset($_REQUEST['loginPw']) == false ) {
-      echo "loginPw를 입력해주세요.";
-      exit;
+    if ( empty($loginPw) ) {
+      jsHistoryBackExit("loginPw를 입력해주세요.");
     }
     
     $loginId = $_REQUEST['loginId'];
