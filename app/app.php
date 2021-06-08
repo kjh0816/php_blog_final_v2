@@ -8,10 +8,11 @@ require_once __DIR__ . '/service/ArticleService.php';
 require_once __DIR__ . '/controller/MemberController.php';
 require_once __DIR__ . '/controller/ArticleController.php';
 
-require_once __DIR__ . '/global.php';
+require_once __DIR__ . '/Application.php';
 require_once __DIR__ . '/interceptor.php';
-
 require_once __DIR__ . '/vo.php';
+
+require_once __DIR__ . '/global.php';
 
 function App__getViewPath($viewName) {
   return __DIR__ . '/../public/' . $viewName . '.view.php';
