@@ -78,3 +78,7 @@ ALTER TABLE article ADD COLUMN memberId INT(10) UNSIGNED NOT NULL AFTER updateDa
 UPDATE article
 SET memberId = id % 2 + 1
 WHERE memberId = 0;
+
+# 회원에 삭제여부 칼럼 추가
+ALTER TABLE `member` ADD COLUMN delStatus TINYINT(1) UNSIGNED NOT NULL DEFAULT 0 AFTER updateDate;
+ALTER TABLE `member` ADD COLUMN delDate DATETIME AFTER delStatus;
