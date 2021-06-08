@@ -9,8 +9,11 @@ class APP__ArticleRepository {
 
   public function getForPrintArticles(): array {
     $sql = DB__secSql();
-    $sql->add("SELECT *");
+    $sql->add("SELECT A.*");
+    $sql->add(", IFNULL(M.nickname, '삭제된사용자') AS extra__writerName");
     $sql->add("FROM article AS A");
+    $sql->add("LEFT JOIN `member` AS M");
+    $sql->add("ON A.memberId = M.id");
     $sql->add("ORDER BY A.id DESC");
     return DB__getRows($sql);
   }

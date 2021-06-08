@@ -16,6 +16,7 @@ $pageTitle = "게시물 리스트";
     $detailUri = "detail.php?id=${article['id']}";
     ?>
     <a href="<?=$detailUri?>">번호 : <?=$article['id']?></a><br>
+    작성자 : <?=$article['extra__writerName']?><br>
     작성 : <?=$article['regDate']?><br>
     수정 : <?=$article['updateDate']?><br>
     <a href="<?=$detailUri?>">제목 : <?=$article['title']?></a><br>
