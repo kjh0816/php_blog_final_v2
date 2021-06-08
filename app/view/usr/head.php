@@ -22,7 +22,7 @@ $loginedMember = $_REQUEST['App__loginedMember'];
   <link rel="stylesheet" href="/resource/common.css">
 </head>
 <body>
-  <div class="site-wrap">
+  <div class="site-wrap min-h-screen bg-blue-500 flex flex-col">
     <header class="top-bar bg-black text-white h-10">
       <div class="container mx-auto h-full flex">
         <a href="/" class="top-bar__logo px-5 flex items-center">
@@ -57,15 +57,15 @@ $loginedMember = $_REQUEST['App__loginedMember'];
       </div>
     </header>
 
-    <h1><?=$pageTitle?></h1>
-    <hr>
-    <?php if ( $isLogined ) { ?>
-      <a href="../member/mypage"><?=$loginedMember['nickname']?> 마이페이지</a>
-      <a href="../member/doLogout">로그아웃</a>
-      <a href="../member/doSecession">탈퇴</a>
-    <!-- unset($_SESSION); -->
-    <?php } else { ?>
-      <a href="../member/login">로그인</a>
-      <a href="../member/join">회원가입</a>
-    <?php } ?>
-  </div>
+    <main class="flex-grow">
+      <h1><?=$pageTitle?></h1>
+      <hr>
+      <?php if ( $isLogined ) { ?>
+        <a href="../member/mypage"><?=$loginedMember['nickname']?> 마이페이지</a>
+        <a href="../member/doLogout">로그아웃</a>
+        <a href="../member/doSecession">탈퇴</a>
+      <!-- unset($_SESSION); -->
+      <?php } else { ?>
+        <a href="../member/login">로그인</a>
+        <a href="../member/join">회원가입</a>
+      <?php } ?>
