@@ -16,11 +16,11 @@ $loginedMember = $_REQUEST['App__loginedMember'];
   <h1><?=$pageTitle?></h1>
   <hr>
   <?php if ( $isLogined ) { ?>
-    <a href="../member/mypage.php"><?=$loginedMember['nickname']?> 마이페이지</a>
-    <a href="../member/doLogout.php">로그아웃</a>
-    <a href="../member/doSecession.php">탈퇴</a>
+    <a href="../member/mypage"><?=$loginedMember['nickname']?> 마이페이지</a>
+    <a href="../member/doLogout">로그아웃</a>
+    <a href="../member/doSecession">탈퇴</a>
   <!-- unset($_SESSION); -->
   <?php } else { ?>
-    <a href="../member/login.php">로그인</a>
-    <a href="../member/join.php">회원가입</a>
+    <a href="../member/login">로그인</a>
+    <a href="../member/join">회원가입</a>
   <?php } ?>

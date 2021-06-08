@@ -3,12 +3,12 @@ $pageTitle = "게시물 수정, ${id}번 게시물";
 ?>
 <?php require_once __DIR__ . "/../head.php"; ?>
 <div>
-  <a href="list.php">글 리스트</a>
-  <a href="detail.php?id=<?=$id?>">원문</a>
+  <a href="list">글 리스트</a>
+  <a href="detail?id=<?=$id?>">원문</a>
 </div>
 <hr>
 
-<form action="doModify.php" method="POST">
+<form action="doModify" method="POST">
 <input type="hidden" name="id" value="<?=$article['id']?>"> 
 <div>
     <span>번호</span>
