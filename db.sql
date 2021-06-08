@@ -50,7 +50,7 @@ CREATE TABLE `member` (
     cellphoneNo CHAR(20) NOT NULL
 );
 
-# 테스트 히ㅗ원 생성
+# 테스트 회원 생성
 INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
@@ -82,3 +82,40 @@ WHERE memberId = 0;
 # 회원에 삭제여부 칼럼 추가
 ALTER TABLE `member` ADD COLUMN delStatus TINYINT(1) UNSIGNED NOT NULL DEFAULT 0 AFTER updateDate;
 ALTER TABLE `member` ADD COLUMN delDate DATETIME AFTER delStatus;
+
+TRUNCATE article;
+
+INSERT INTO article 
+SET regDate = NOW(),
+updateDate = NOW(),
+title = '토스트 UI 뷰어 사용법',
+`body` = '
+# 기초(큰 제목)
+## 자바스크립트(작은 제목)
+```javascript
+let a = 10;
+console.log(a + 10);
+```
+## HTML과 자바스크립트
+```html
+<div class="aritlce"></div>
+<script>
+let div = document.getElementsByClassName("article")[0];
+</script>
+```
+## SQL
+```sql
+SELECT *
+FROM article
+```
+## PHP
+```php
+<?php
+$a = 10;
+?>
+```
+## Kotlin
+```kotlin
+val a = 10
+```
+';
