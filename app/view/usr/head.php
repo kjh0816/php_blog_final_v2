@@ -22,7 +22,7 @@ $loginedMember = $_REQUEST['App__loginedMember'];
   <link rel="stylesheet" href="/resource/common.css">
 </head>
 <body>
-  <div class="site-wrap min-h-screen bg-blue-500 flex flex-col">
+  <div class="site-wrap min-h-screen flex flex-col">
     <header class="top-bar bg-black text-white h-10">
       <div class="container mx-auto h-full flex">
         <a href="/" class="top-bar__logo px-5 flex items-center">
@@ -46,26 +46,32 @@ $loginedMember = $_REQUEST['App__loginedMember'];
                 <span class="ml-2 font-bold">ABOUT ME</span>
               </a>
             </li>
+            <?php if ( $isLogined ) { ?>
+            <li class="hover:bg-white hover:text-black">
+              <a href="/usr/member/doLogout" class="h-full flex items-center px-5">
+                <span><i class="fas fa-sign-out-alt"></i></span>
+                <span class="ml-2 font-bold">LOGOUT</span>
+              </a>
+            </li>
+            <?php } else { ?>
             <li class="hover:bg-white hover:text-black">
               <a href="/usr/member/login" class="h-full flex items-center px-5">
                 <span><i class="fas fa-sign-in-alt"></i></span>
                 <span class="ml-2 font-bold">LOGIN</span>
               </a>
             </li>
+            <?php } ?>
           </ul>
         </nav>
       </div>
     </header>
 
     <main class="flex-grow">
-      <h1><?=$pageTitle?></h1>
-      <hr>
-      <?php if ( $isLogined ) { ?>
-        <a href="../member/mypage"><?=$loginedMember['nickname']?> 마이페이지</a>
-        <a href="../member/doLogout">로그아웃</a>
-        <a href="../member/doSecession">탈퇴</a>
-      <!-- unset($_SESSION); -->
-      <?php } else { ?>
-        <a href="../member/login">로그인</a>
-        <a href="../member/join">회원가입</a>
-      <?php } ?>
+      <section class="section-title mt-5 text-2xl font-bold">
+        <h1 class="container mx-auto">
+          <div class="con-pad">
+            <span><?=$pageTitleIcon?></span>
+            <span><?=$pageTitle?></span>
+          </div>
+        </h1>
+      </section>

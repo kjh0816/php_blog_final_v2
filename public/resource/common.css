@@ -23,3 +23,7 @@
 html > body {
  font-family: 'LotteMartDream', sans-serif;
 }
+
+.con-pad {
+  padding:0 1rem;
+}
