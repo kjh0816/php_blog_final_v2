@@ -16,6 +16,14 @@ class APP__UsrMemberController {
     jsLocationReplaceExit("../article/list.php");
   }
 
+  public function actionDoSecession() {
+    unset($_SESSION['loginedMemberId']);
+
+    $this->memberService->secession($_REQUEST['App__loginedMemberId']);
+
+    jsLocationReplaceExit("../article/list.php", "회원탈퇴가 완료되었습니다.");
+  }
+
   public function actionDoLogin() {
     $loginId = getStrValueOr($_REQUEST['loginId'], "");
 
