@@ -3,6 +3,7 @@ $pageTitleIcon = '<i class="fas fa-list"></i>';
 $pageTitle = "최신 게시물 리스트";
 ?>
 <?php require_once __DIR__ . "/../head.php"; ?>
+<?php require_once __DIR__ . "/../../part/toastUiSetup.php"; ?>
 
 <?php if ( $isLogined ) { ?>
 
@@ -31,6 +32,8 @@ $pageTitle = "최신 게시물 리스트";
           <div class="py-5">
             <?php
             $detailUri = "detail?id=${article['id']}";
+            $body = str_replace('<script', '<t-script>', $article['body']);
+            $body = str_replace('</script>', '</t-script>', $article['body']);
             ?>
             <div>
               <div class="badge badge-primary badge-outline">번호</div>
@@ -53,7 +56,8 @@ $pageTitle = "최신 게시물 리스트";
               <?=$article['updateDate']?>
             </div>
             <div class="mt-2">
-              <?=$article['body']?>
+              <script type="text/x-template"><?=$body?></script>
+              <div class="toast-ui-viewer"></div>
             </div>
           </div>
           <hr>

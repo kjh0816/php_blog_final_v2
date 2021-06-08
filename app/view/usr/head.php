@@ -11,6 +11,9 @@ $loginedMember = $_REQUEST['App__loginedMember'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?=$pageTitle?></title>
 
+  <!-- 제이쿼리 불러오기 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
   <!-- 폰트어썸 불러오기 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -20,6 +23,7 @@ $loginedMember = $_REQUEST['App__loginedMember'];
   <link href="https://cdn.jsdelivr.net/npm/daisyui@1.3.2/dist/full.css" rel="stylesheet" type="text/css" />
 
   <link rel="stylesheet" href="/resource/common.css">
+
 </head>
 <body>
   <div class="site-wrap min-h-screen flex flex-col">
