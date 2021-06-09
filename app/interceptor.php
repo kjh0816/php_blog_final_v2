@@ -22,6 +22,7 @@ function App__runNeedLoginInterceptor(string $action) {
     case 'usr/member/doJoin':
     case 'usr/article/list':
     case 'usr/article/detail':
+    case 'usr/home/aboutMe':
       return;
   }
 

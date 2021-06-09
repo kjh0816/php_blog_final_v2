@@ -88,6 +88,7 @@ TRUNCATE article;
 INSERT INTO article 
 SET regDate = NOW(),
 updateDate = NOW(),
+memberId = 1,
 title = '토스트 UI 뷰어 사용법',
 `body` = '
 # 기초(큰 제목)
