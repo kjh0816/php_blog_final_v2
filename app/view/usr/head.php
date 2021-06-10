@@ -1,4 +1,6 @@
 <?php
+global $application;
+$prodSiteDomain = $application->getProdSiteDomain();
 $isLogined = $_REQUEST['App__isLogined'];
 $loginedMemberId = $_REQUEST['App__loginedMemberId'];
 $loginedMember = $_REQUEST['App__loginedMember'];
