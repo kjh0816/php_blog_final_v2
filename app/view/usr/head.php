@@ -26,12 +26,12 @@ $loginedMember = $_REQUEST['App__loginedMember'];
 
 </head>
 <body>
-  <div class="site-wrap min-h-screen flex flex-col">
-    <header class="top-bar bg-black text-white h-10">
+  <div class="site-wrap min-h-screen flex flex-col pt-10">
+    <header class="top-bar fixed top-0 inset-x-0 bg-black text-white h-10">
       <div class="container mx-auto h-full flex">
         <a href="/" class="top-bar__logo px-5 flex items-center">
           <span><i class="fas fa-lemon"></i></span>
-          <span class="ml-2 font-bold">LEMON BLOG</span>
+          <span class="ml-2 font-bold hidden sm:inline">LEMON BLOG</span>
         </a>
 
         <div class="flex-grow"></div>
@@ -41,27 +41,27 @@ $loginedMember = $_REQUEST['App__loginedMember'];
             <li class="hover:bg-white hover:text-black">
               <a href="/" class="h-full flex items-center px-5">
                 <span><i class="fas fa-home"></i></span>
-                <span class="ml-2 font-bold">HOME</span>
+                <span class="ml-2 font-bold hidden sm:inline">HOME</span>
               </a>
             </li>
             <li class="hover:bg-white hover:text-black">
               <a href="/usr/home/aboutMe" class="h-full flex items-center px-5">
                 <span><i class="far fa-id-card"></i></span>
-                <span class="ml-2 font-bold">ABOUT ME</span>
+                <span class="ml-2 font-bold hidden sm:inline">ABOUT ME</span>
               </a>
             </li>
             <?php if ( $isLogined ) { ?>
             <li class="hover:bg-white hover:text-black">
               <a href="/usr/member/doLogout" class="h-full flex items-center px-5">
                 <span><i class="fas fa-sign-out-alt"></i></span>
-                <span class="ml-2 font-bold">LOGOUT</span>
+                <span class="ml-2 font-bold hidden sm:inline">LOGOUT</span>
               </a>
             </li>
             <?php } else { ?>
             <li class="hover:bg-white hover:text-black">
               <a href="/usr/member/login" class="h-full flex items-center px-5">
                 <span><i class="fas fa-sign-in-alt"></i></span>
-                <span class="ml-2 font-bold">LOGIN</span>
+                <span class="ml-2 font-bold hidden sm:inline">LOGIN</span>
               </a>
             </li>
             <?php } ?>

@@ -27,3 +27,7 @@ html > body, html > body .tui-editor-contents {
 .con-pad {
   padding:0 1rem;
 }
+
+.top-bar {
+  position: fixed;
+}
