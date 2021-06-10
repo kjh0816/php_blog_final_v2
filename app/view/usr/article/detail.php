@@ -28,4 +28,18 @@ $body = str_replace('</script>', '</t-script>', $article['body']);
     </div>
   </div>
 </section>
+
+<section class="section-disqus">
+  <div class="container mx-auto">
+    <div id="disqus_thread"></div>
+    <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://bbb-oa-gg.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+  </div>
+</section>
 <?php require_once __DIR__ . "/../foot.php"; ?>
