@@ -38,6 +38,55 @@ $loginedMember = $_REQUEST['App__loginedMember'];
     gtag('config', 'G-94LNZ8CK0K');
   </script>
   <?php } ?>
+
+  <?php
+  $siteName = "BBB BLOG";
+  $siteCanonicalUrl = $_SERVER['REQUEST_URI'];
+  $siteKeywords = "IT, Java, PHP, HTML, CSS, Javascript, MySQL, Linux";
+  $pageGenDate = date("Y-m-d") . 'T' . date("H:i:s") . 'Z';
+  $siteSubject = "IT 전문 블로그 플랫폼, BBB BLOG";
+  $siteDescription = "IT 전문 블로그 플랫폼, BBB BLOG 입니다. 누구나 멋진 나만의 IT 블로그를 만들 수 있습니다.";
+  $siteDomain = $prodSiteDomain;
+  $siteMainUrl = "https://{$siteDomain}";
+  $siteMetaImgUrl = "/resource/img/logo/logo_meta.png";
+  ?>
+
+  <meta name="apple-mobile-web-app-title" content="<?=$siteName?>" />
+  <!-- 메타태그정보 //-->
+  <!-- META -->
+  <link rel="canonical" href="<?=$siteCanonicalUrl?>" />
+  <meta name="subject" content="<?=$siteSubject?>"/>
+  <meta name="title" content="<?=$siteName?>" />
+  <meta name="keywords" content="<?=$siteKeywords?>" />
+  <meta name="copyright" content="<?=$siteName?>" />
+  <meta name="pubdate" content="<?=$pageGenDate?>" />
+  <meta name="lastmod" content="<?=$pageGenDate?>" />
+  <!-- OPENGRAPH -->
+  <meta property="og:site_name" content="<?=$siteName?>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="<?=$siteSubject?>" />
+  <meta property="og:description" content="<?=$siteDescription?>" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:image" content="<?=$siteMainUrl?><?=$siteMetaImgUrl?>" />
+  <meta property="og:image:alt" content="<?=$siteDomain?>" />
+  <meta property="og:image:width" content="486" />
+  <meta property="og:image:height" content="254" />
+  <meta property="og:updated_time" content="<?=$pageGenDate?>"/>
+  <meta property="og:pubdate" content="<?=$pageGenDate?>" />
+  <meta property="og:url" content="<?=  $siteCanonicalUrl?>" />
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="<?=$siteSubject?>" />
+  <meta name="twitter:site" content="<?=$siteName?>" />
+  <meta name="twitter:creator" content="<?=$siteName?>" />
+  <meta name="twitter:image" content="<?=$siteMetaImgUrl?>">
+  <meta name="twitter:description" content="<?=$siteDescription?>" />
+  <!-- GOOGLE+ -->
+  <meta itemprop="headline" content="<?=$siteName?>" />
+  <meta itemprop="name" content="<?=$siteName?>" />
+  <meta itemprop="description" content="<?=$siteDescription?>" />
+  <meta itemprop="image" content="<?=$siteMetaImgUrl?>" />
+
 </head>
 <body>
   <div class="site-wrap min-h-screen flex flex-col pt-10">
