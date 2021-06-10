@@ -1,5 +1,6 @@
 <?php
 global $application;
+$envCode = $application->getEnvCode();
 $prodSiteDomain = $application->getProdSiteDomain();
 $isLogined = $_REQUEST['App__isLogined'];
 $loginedMemberId = $_REQUEST['App__loginedMemberId'];
@@ -26,6 +27,17 @@ $loginedMember = $_REQUEST['App__loginedMember'];
 
   <link rel="stylesheet" href="/resource/common.css">
 
+  <?php if ( $envCode == 'prod' ) { ?>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-94LNZ8CK0K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-94LNZ8CK0K');
+  </script>
+  <?php } ?>
 </head>
 <body>
   <div class="site-wrap min-h-screen flex flex-col pt-10">
