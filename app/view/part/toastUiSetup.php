@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://uicdn.toast.com/editor/2.5.2/toastui-editor.min.css" />
 
 <!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
-<script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js" defer></script>
+<script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/3.0.0/toastui-editor-plugin-code-syntax-highlight.min.js" defer></script>
 
 <style>
 .toast-youtube-embed {
