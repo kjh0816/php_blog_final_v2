@@ -202,3 +202,8 @@ function jsHistoryBackExit($msg = null)
     echo "</script>";
     exit;
 }
+
+function ToastUiEditor__getSafeSource($str) {
+    $str = str_replace('<script', '<t-script>', $str);
+    return str_replace('</script>', '</t-script>', $str);
+}

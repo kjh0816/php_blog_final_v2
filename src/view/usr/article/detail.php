@@ -8,8 +8,7 @@ $meta['siteDescription'] = str_replace("\n", "", $meta['siteDescription']);
 $pageTitleIcon = '<i class="fas fa-newspaper"></i>';
 $pageTitle = "게시물 상세내용, ${id}번 게시물";
 
-$body = str_replace('<script', '<t-script>', $article['body']);
-$body = str_replace('</script>', '</t-script>', $article['body']);
+$body = ToastUiEditor__getSafeSource($article['body']);
 ?>
 <?php require_once __DIR__ . "/../head.php"; ?>
 <?php require_once __DIR__ . "/../../part/toastUiSetup.php"; ?>
