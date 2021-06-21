@@ -3,6 +3,7 @@ $pageTitleIcon = '<i class="fas fa-pen"></i>';
 $pageTitle = "게시물 작성";
 ?>
 <?php require_once __DIR__ . "/../head.php"; ?>
+<?php require_once __DIR__ . "/../../part/toastUiSetup.php"; ?>
 
 <section class="secion-article-write">
   <div class="container mx-auto">
@@ -23,25 +24,31 @@ $pageTitle = "게시물 작성";
           return;
         }
 
-        if ( form.body.value.length == 0 ) {
+        const bodyEditor = $(form).find('.input-body').data('data-toast-editor');
+        const body = bodyEditor.getMarkdown().trim();
+        if (body.length == 0) {
+          bodyEditor.focus();
           alert('내용을 입력해주세요.');
-          form.body.focus();
-
           return;
         }
+
+        form.body.value = body;
 
         form.submit();
         ArticleDoWrite__submitFormDone = true;
       }
       </script>
       <form action="doWrite" method="POST" onsubmit="ArticleDoWrite__submitForm(this); return false;">
+        <input type="hidden" name="body">
         <div>
           <span>제목</span>
           <input placeholder="제목을 입력해주세요." type="text" name="title"> 
         </div>
         <div>
           <span>내용</span>
-          <textarea class="w-full p-4 h-96" placeholder="내용을 입력해주세요." name="body"></textarea>
+
+          <script type="text/x-template"></script>
+          <div class="toast-ui-editor input-body"></div>
         </div>
         <div>
           <input type="submit" value="글작성">
