@@ -3,6 +3,8 @@ $meta = [];
 $updateDateBits = explode(" ", $article['updateDate']);
 $meta['pageGenDate'] = $updateDateBits[0] . 'T' . $updateDateBits[1] . 'Z';
 $meta['siteSubject'] = str_replace('"', '＂', $article['title']);
+$utterancPageIdentifier = "/usr/article/detail?id={$article['id']}";
+$meta['og:title'] = $utterancPageIdentifier;
 $meta['siteDescription'] = str_replace('"', '＂', mb_substr($article['body'], 0, 100));
 $meta['siteDescription'] = str_replace("\n", "", $meta['siteDescription']);
 $pageTitleIcon = '<i class="fas fa-newspaper"></i>';
@@ -38,21 +40,18 @@ $body = ToastUiEditor__getSafeSource($article['body']);
   <div class="container mx-auto">
     <div class="con-pad">
       <div id="disqus_thread"></div>
-      <?php
-      $disqusConfigPageIdentifier = "/usr/article/detail?id={$article['id']}";
-      $disqusConfigPageUrl = "https://{$prodSiteDomain}{$disqusConfigPageIdentifier}";
-      ?>
-      <script>
-        var disqus_config = function () {
-          this.page.url = '<?=$disqusConfigPageUrl?>';
-          this.page.identifier = '<?=$disqusConfigPageIdentifier?>';
-        };
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://bbb-oa-gg.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
+      
+      <style>
+      .utterances {
+        max-width: 100%;
+      }
+      </style>
+      <script src="https://utteranc.es/client.js"
+        repo="jhs512/bbb_oa_gg_comment"
+        issue-term="og:title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
       </script>
     </div>
   </div>

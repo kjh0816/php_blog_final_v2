@@ -32,8 +32,7 @@ $pageTitle = "최신 게시물 리스트";
           <div class="py-5">
             <?php
             $detailUri = "detail?id=${article['id']}";
-            $body = str_replace('<script', '<t-script>', $article['body']);
-            $body = str_replace('</script>', '</t-script>', $article['body']);
+            $body = ToastUiEditor__getSafeSource($article['body']);
             ?>
             <div>
               <div class="badge badge-primary badge-outline">번호</div>
