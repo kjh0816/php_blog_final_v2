@@ -28,7 +28,7 @@ $meta['siteMainUrl'] = "https://{$prodSiteDomain}";
 $meta['siteMetaImgUrl'] = "/resource/img/logo/logo_meta.png";
   
 ?>
-
+<link href="<?=$meta['siteMetaImgUrl']?>" rel="shortcut icon" type="image/x-icon">
 <meta name="apple-mobile-web-app-title" content="<?=$meta['siteName']?>" />
 <!-- 메타태그정보 //-->
 <!-- META -->
@@ -39,7 +39,7 @@ $meta['siteMetaImgUrl'] = "/resource/img/logo/logo_meta.png";
 <meta name="copyright" content="<?=$meta['siteName']?>" />
 <meta name="pubdate" content="<?=$meta['pageGenDate']?>" />
 <meta name="lastmod" content="<?=$meta['pageGenDate']?>" />
-<!-- OPENGRAPH -->
+<!-- OPENGRAPH(유투부) -->
 <meta property="og:site_name" content="<?=$meta['siteName']?>" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="<?=$meta['og:title']?>" />
