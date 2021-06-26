@@ -31,7 +31,7 @@ class ArticleRepository
     {
         $sql = DB__secSql();
         $sql->add("SELECT A.*");
-        $sql->add(", IFNULL(M.nickname, '삭제된사용자') AS extra__writerName");
+        $sql->add(", IFNULL(M.nickname, '탈퇴한 회원') AS extra__writerName");
         $sql->add("FROM article AS A");
         $sql->add("LEFT JOIN `member` AS M");
         $sql->add("ON A.memberId = M.id");
