@@ -67,4 +67,9 @@ class UsrMemberController extends Controller
 
         jsLocationReplaceExit("../article/list", "{$member['nickname']}님 환영합니다.");
     }
+
+    public function actionShowAboutMe()
+    {
+        require_once $this->getViewPath("usr/member/aboutMe");
+    }
 }

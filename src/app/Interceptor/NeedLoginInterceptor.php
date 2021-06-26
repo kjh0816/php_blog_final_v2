@@ -13,7 +13,7 @@ class NeedLoginInterceptor extends Interceptor
             case 'usr/member/doJoin':
             case 'usr/article/list':
             case 'usr/article/detail':
-            case 'usr/home/aboutMe':
+            case 'usr/member/aboutMe':
                 return;
         }
 

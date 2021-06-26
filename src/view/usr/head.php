@@ -61,14 +61,14 @@ $loginedMember = $_REQUEST['App__loginedMember'];
 
         <nav class="menu-box-1">
           <ul class="flex h-full">
-          <?php if ( $isLogined ) { ?>
+          
             <li class="hover:bg-white hover:text-pink-500">
-              <a href="/usr/member/user" class="h-full flex items-center px-5">
+              <a href="/usr/member/aboutMe" class="h-full flex items-center px-5">
                 <span><i class="fas fa-address-card"></i></span>
-                <span class="ml-2 font-bold hidden sm:inline">MY PAGE</span>
+                <span class="ml-2 font-bold hidden sm:inline">ABOUT ME</span>
               </a>
             </li>
-            <?php } ?>
+            
             <li class="hover:bg-white hover:text-pink-500">
               <a href="/usr/article/list" class="h-full flex items-center px-5">
                 <span><i class="fas fa-newspaper"></i></span>
