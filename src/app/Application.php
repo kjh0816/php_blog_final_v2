@@ -44,15 +44,15 @@ class Application
         $envCode = $this->getEnvCode();
 
         if ($envCode == 'dev') {
-            $dbHost = "127.0.0.1";
-            $dbId = "sbsst";
+            $dbHost = "jua.oa.gg";
+            $dbId = "st__2021_04_full__site03";
             $dbPw = "sbs123414";
-            $dbName = "php_blog_2021";
+            $dbName = "st__2021_04_full__site03";
         } else {
             $dbHost = "127.0.0.1";
-            $dbId = "st__2021_04_full__site00";
+            $dbId = "st__2021_04_full__site03";
             $dbPw = "1234";
-            $dbName = "st__2021_04_full__site00";
+            $dbName = "st__2021_04_full__site03";
         }
 
         $dbConn = mysqli_connect($dbHost, $dbId, $dbPw, $dbName) or die("DB CONNECTION ERROR");
