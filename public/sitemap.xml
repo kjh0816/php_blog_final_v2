@@ -6,25 +6,54 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+
 <url>
-  <loc>https://bbb.oa.gg/usr/article/list</loc>
-  <lastmod>2021-06-25T01:54:13+00:00</lastmod>
+  <loc>https://b.jihoo.kr/usr/article/list</loc>
+  <lastmod>2021-06-26T05:53:41+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://bbb.oa.gg/usr/article/detail?id=4</loc>
-  <lastmod>2021-06-25T01:54:13+00:00</lastmod>
+  <loc>https://b.jihoo.kr/usr/article/detail?id=15</loc>
+  <lastmod>2021-06-26T05:53:41+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://bbb.oa.gg/usr/article/detail?id=3</loc>
-  <lastmod>2021-06-25T01:54:13+00:00</lastmod>
+  <loc>https://b.jihoo.kr/usr/article/detail?id=14</loc>
+  <lastmod>2021-06-26T05:53:41+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://bbb.oa.gg/usr/article/detail?id=1</loc>
-  <lastmod>2021-06-25T01:54:13+00:00</lastmod>
+  <loc>https://b.jihoo.kr/usr/article/detail?id=13</loc>
+  <lastmod>2021-06-26T05:53:41+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://b.jihoo.kr/usr/article/detail?id=12</loc>
+  <lastmod>2021-06-26T05:53:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://b.jihoo.kr/usr/article/detail?id=9</loc>
+  <lastmod>2021-06-26T05:53:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://b.jihoo.kr/usr/article/detail?id=3</loc>
+  <lastmod>2021-06-26T05:53:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://b.jihoo.kr/usr/article/detail?id=2</loc>
+  <lastmod>2021-06-26T05:53:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://b.jihoo.kr/usr/article/detail?id=1</loc>
+  <lastmod>2021-06-26T05:53:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+ 
+
 
 </urlset>

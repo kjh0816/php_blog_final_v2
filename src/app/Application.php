@@ -27,7 +27,7 @@ class Application
 
     function getEnvCode(): string
     {
-        if ($_SERVER['DOCUMENT_ROOT'] == '/web/2021_04_full/site00/public') {
+        if ($_SERVER['DOCUMENT_ROOT'] == '/web/2021_04_full/site03/public') {
             return 'prod';
         }
 
@@ -36,7 +36,7 @@ class Application
 
     function getProdSiteDomain()
     {
-        return "bbb.oa.gg";
+        return "b.jihoo.kr";
     }
 
     public function getDbConnectionByEnv(): \mysqli
