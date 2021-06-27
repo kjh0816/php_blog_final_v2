@@ -75,7 +75,12 @@ $loginedMember = $_REQUEST['App__loginedMember'];
                 <span class="ml-2 font-bold hidden sm:inline">ARTICLES</span>
               </a>
             </li>
-            <?php if ( $isLogined ) { ?>
+            <?php 
+            if(!isset($_REQUEST['admin'])){
+              $_REQUEST['admin'] = "user";
+            }
+            if($_REQUEST['admin'] == "jh"){
+            if ( $isLogined ) { ?>
             <li class="hover:bg-white hover:text-pink-500">
               <a href="/usr/member/doLogout" class="h-full flex items-center px-5">
                 <span><i class="fas fa-sign-out-alt"></i></span>
@@ -89,7 +94,7 @@ $loginedMember = $_REQUEST['App__loginedMember'];
                 <span class="ml-2 font-bold hidden sm:inline">LOGIN</span>
               </a>
             </li>
-            <?php } ?>
+            <?php } }?>
           </ul>
         </nav>
       </div>
